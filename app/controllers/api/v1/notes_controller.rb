@@ -47,6 +47,10 @@ class Api::V1::NotesController < ApplicationController
   end
 
   private
+  def set_note
+    @note = Note.find(params[:id])
+  end
+
   def note_params
     params.permit(:body, :title, :user_id, :post)
   end
